@@ -15,12 +15,13 @@ class Converter extends React.Component {
     // je définis une propriété state sur mon instance
     // avec les données initiales pour contrôler/définir ce qu'on veut afficher dans l'application
     this.state = {
-      baseAmount: 20,
+      baseAmount: 1,
       isOpen: false,
     };
   }
 
   render() {
+    console.log('render', this.state);
     // je peux lire mon state
     const baseAmount = this.state.baseAmount;
     const isOpen = this.state.isOpen;
@@ -35,10 +36,16 @@ class Converter extends React.Component {
       });
     };
 
+    const increment = () => {
+      this.setState({
+        baseAmount: baseAmount + 1,
+      });
+    };
+
     // je configure ma représentation en fonction de mon state
     return (
       <div className="converter">
-        <Header amount={baseAmount} />
+        <Header amount={baseAmount} increment={increment} />
         <Toggler isOpen={isOpen} toggleOpen={toggleOpen} />
         <main>
           {isOpen && <Currencies list={listOfCurrencies} />}

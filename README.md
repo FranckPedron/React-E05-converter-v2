@@ -1,5 +1,16 @@
 # Convertisseur
 
+## notes jour 5
+
+Finalement en gros notre routine c'est :
+
+- décrire l'interface via des composants pour représenter ce qu'on veut
+- on rend paramétrable via les props le composants pour pouvoir décrire plusieurs scénarios possibles
+- on veut que l'ui évolue en réponse à des intéractions ?
+  - on représente ce qui va évoluer dans le state et on s'en sert pour paramétrer l'affichage
+  - on écoute l'intéraction
+  - on modifie le state en réponse à l'intéraction
+
 ## Objectif
 
 Réaliser ce projet
