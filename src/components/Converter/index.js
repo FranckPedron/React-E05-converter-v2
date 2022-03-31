@@ -15,7 +15,7 @@ function Converter() {
       <Header amount={baseAmount} />
       <Toggler isOpen={isOpen} />
       <main>
-        <Currencies list={listOfCurrencies} />
+        {isOpen && <Currencies list={listOfCurrencies} />}
         <Amount />
       </main>
     </div>
