@@ -7,7 +7,7 @@ import './style.scss';
 import listOfCurrencies from 'src/data/currencies';
 
 function Converter() {
-  const baseAmount = 1;
+  const baseAmount = 10;
   const isOpen = true;
 
   return (
