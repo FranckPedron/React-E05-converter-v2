@@ -3,12 +3,16 @@ import Currencies from 'src/components/Currencies';
 import Amount from 'src/components/Amount';
 import './style.scss';
 
+import listOfCurrencies from 'src/data/currencies';
+
 function Converter() {
+  const baseAmount = 1;
+
   return (
     <div className="converter">
-      <Header />
+      <Header amount={baseAmount} />
       <main>
-        <Currencies />
+        <Currencies list={listOfCurrencies} />
         <Amount />
       </main>
     </div>

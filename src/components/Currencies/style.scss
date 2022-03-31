@@ -2,6 +2,7 @@
 
 .currencies {
   max-height: 50vh;
+  min-height: 10em;
   overflow-y: auto;
   color: vars.$colorBase;
   font-weight: 500;

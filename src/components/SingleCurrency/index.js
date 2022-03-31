@@ -1,13 +1,18 @@
+import PropTypes from 'prop-types';
 import './style.scss';
 
-function SingleCurrency() {
+function SingleCurrency({ name }) {
   return (
     <li className="currency">
       <button className="currency-btn" type="button">
-        Une devise
+        {name}
       </button>
     </li>
   );
 }
+
+SingleCurrency.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 
 export default SingleCurrency;
