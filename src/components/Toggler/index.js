@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
 import './style.scss';
 
-function Toggler({ isOpen }) {
+function Toggler({ isOpen, toggleOpen }) {
   let verb = 'Show';
   if (isOpen) {
     verb = 'Hide';
   }
 
   const handleClick = () => {
-    console.log('click');
     // ici on ne veut pas modifier directement le DOM,
     // on ne veut pas retomber dans une approche impérative
     // autrement on risquera de retomber dans nos pièges impératifs
@@ -17,6 +16,7 @@ function Toggler({ isOpen }) {
     // on veut dire quoi modifier dans la source de vérité
     // c'est quoi l'intention
     // FERMER ou OUVRIR
+    toggleOpen();
   };
 
   return (
@@ -28,6 +28,7 @@ function Toggler({ isOpen }) {
 
 Toggler.propTypes = {
   isOpen: PropTypes.bool.isRequired,
+  toggleOpen: PropTypes.func.isRequired,
 };
 
 export default Toggler;

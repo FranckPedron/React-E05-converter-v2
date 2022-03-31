@@ -12,20 +12,34 @@ import listOfCurrencies from 'src/data/currencies';
 class Converter extends React.Component {
   constructor(props) {
     super(props);
+    // je définis une propriété state sur mon instance
+    // avec les données initiales pour contrôler/définir ce qu'on veut afficher dans l'application
     this.state = {
-      baseAmount: 10,
-      isOpen: true,
+      baseAmount: 20,
+      isOpen: false,
     };
   }
 
   render() {
+    // je peux lire mon state
     const baseAmount = this.state.baseAmount;
     const isOpen = this.state.isOpen;
 
+    const toggleOpen = () => {
+      // NON
+      // this.state.isOpen = true;
+      // ça ne suffit pas de modifier le state, il faut déclencher le calcul de l'ui
+      // à partir de state ET la réconciliation avec le DOM réel
+      this.setState({
+        isOpen: !isOpen,
+      });
+    };
+
+    // je configure ma représentation en fonction de mon state
     return (
       <div className="converter">
         <Header amount={baseAmount} />
-        <Toggler isOpen={isOpen} />
+        <Toggler isOpen={isOpen} toggleOpen={toggleOpen} />
         <main>
           {isOpen && <Currencies list={listOfCurrencies} />}
           <Amount />
