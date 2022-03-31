@@ -6,8 +6,13 @@ function Toggler({ isOpen }) {
   if (isOpen) {
     verb = 'Hide';
   }
+
+  const handleClick = () => {
+    console.log('click');
+  };
+
   return (
-    <button className="toggler" type="button">
+    <button className="toggler" type="button" onClick={handleClick}>
       {verb} currencies
     </button>
   );
