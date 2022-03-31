@@ -1,26 +1,44 @@
-# Convertisseur v2
-
-> En repartant du projet `converter`
+# Convertisseur
 
 ## Objectif
 
-Ajouter la conversion lors du clic sur une devise
+Réaliser ce projet
 
 ![](resultat.gif)
 
 ## Instructions
 
-- Repartir de l'exemple toggle
-- Préparer les props
-- Ajouter le handler (juste un console.log pour commencer)
-- Mettre en place la modification du state
-- Brancher le handler
+- Commencer par la structure fondamentale (les blocs principaux)
+- Créer les composants
+- Un peu de style
+- Identifier les données à transmettre
+- Placer des props
+- Dynamiser avec `src/data/currencies.js`
+
+## Styles
+
+### Font
+
+[Spartan](https://fonts.google.com/?query=spartan)
+- `300` : textes
+- `500` : liste de devises
+- `700` : titre et résultat
+
+### Couleurs
+
+- Principale `#bb5432`
+- Alternative `#f1c5b6`
+- Claire `#fff`
+
+### Transitions
+
+- Rapide : `0.2s`
+- Lente : `1s`
 
 
 ## Whaaat ?
 
 - https://fr.reactjs.org/docs/components-and-props.html#composing-components
-- https://fr.reactjs.org/docs/state-and-lifecycle.html#converting-a-function-to-a-class
-- https://fr.reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class
 - https://fr.reactjs.org/docs/introducing-jsx.html#embedding-expressions-in-jsx
-- https://fr.reactjs.org/docs/handling-events.html
+- https://developer.mozilla.org/fr/docs/Web/CSS/overflow
+- https://developer.mozilla.org/fr/docs/Web/CSS/transition
