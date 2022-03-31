@@ -1,0 +1,13 @@
+@use 'src/styles/vars';
+
+.amount {
+  color: vars.$colorBase;
+  text-align: center;
+  padding: 2rem;
+
+  &-number {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+}

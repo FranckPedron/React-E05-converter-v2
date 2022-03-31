@@ -1,0 +1,14 @@
+@use 'src/styles/vars';
+
+.header {
+  background-color: vars.$colorBase;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+
+  &-title {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 0.5rem;
+  }
+}

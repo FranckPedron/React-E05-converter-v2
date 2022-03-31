@@ -1,7 +1,11 @@
+import './style.scss';
+
 function SingleCurrency() {
   return (
     <li className="currency">
-      Ici on aura SingleCurrency
+      <button className="currency-btn" type="button">
+        Une devise
+      </button>
     </li>
   );
 }

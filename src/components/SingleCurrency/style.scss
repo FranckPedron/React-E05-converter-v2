@@ -1,0 +1,20 @@
+@use 'src/styles/vars';
+
+.currency {
+  border-top: 1px solid vars.$colorBase;
+
+  &-btn {
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    border: 0;
+    transition: background-color 1s;
+
+    &:hover, &:focus {
+      background-color: vars.$colorAlt;
+      transition-duration: 0.2s;
+    }
+  }
+
+}

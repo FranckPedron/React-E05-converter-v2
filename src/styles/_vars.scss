@@ -1,0 +1,6 @@
+@use 'sass:color';
+
+$colorBase: #123456;
+$colorAlt: color.scale($colorBase, $lightness: 80%);
+
+// $toto: 50px;

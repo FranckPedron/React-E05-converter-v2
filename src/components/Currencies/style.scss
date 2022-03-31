@@ -1,0 +1,13 @@
+@use 'src/styles/vars';
+
+.currencies {
+  max-height: 50vh;
+  overflow-y: auto;
+  color: vars.$colorBase;
+  font-weight: 500;
+
+  &-title {
+    font-weight: bold;
+    padding: 1rem;
+  }
+}
