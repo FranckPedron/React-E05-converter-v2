@@ -2,7 +2,7 @@ import SingleCurrency from 'src/components/SingleCurrency';
 import './style.scss';
 import PropTypes from 'prop-types';
 
-function Currencies({ list }) {
+function Currencies({ list, setCurrency }) {
   return (
     <section className="currencies">
       <h2 className="currencies-title">Currencies</h2>
@@ -15,6 +15,7 @@ function Currencies({ list }) {
             // soit je le passe tout le contenu de l'objet de départ,
             // et il se débrouillera pour récupérer uniquement ce qui l'intéresse
             // {...currency}
+            setCurrency={setCurrency}
           />
         ))}
       </ul>
@@ -25,6 +26,7 @@ function Currencies({ list }) {
 Currencies.propTypes = {
   list: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
+    setCurrency: PropTypes.func.isRequired,
   })).isRequired,
 };
 

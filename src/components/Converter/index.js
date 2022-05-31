@@ -17,6 +17,7 @@ class Converter extends React.Component {
     this.state = {
       baseAmount: 1,
       isOpen: true,
+      currencyTarget: 'Bulgarian Lev',
     };
   }
 
@@ -24,6 +25,7 @@ class Converter extends React.Component {
     // je peux lire mon state
     const baseAmount = this.state.baseAmount;
     const isOpen = this.state.isOpen;
+    const currencyTarget = this.state.currencyTarget;
 
     const toggleOpen = () => {
       // NON
@@ -43,12 +45,17 @@ class Converter extends React.Component {
       });
     };
 
+    const setCurrency = (newcurrency) => {
+      this.setState({
+        currencyTarget: newcurrency
+      })
+    }
+
     // fonction qui fait la conversion qu'il faudra sans doute appeler à un moment
     const makeConversion = () => {
-      // on part de la devise actuelle qui doit être ajouté au state
-      const { currency } = this.state;
+
       // Récupération des infos de la devise choisie
-      const currencyData = listOfCurrencies.find((data) => data.name === currency);
+      const currencyData = listOfCurrencies.find((data) => data.name === currencyTarget);
       // console.log(currencyData);
       // Extraction du taux
       const { rate } = currencyData;
@@ -58,14 +65,16 @@ class Converter extends React.Component {
       return Math.round(result * 100) / 100;
     };
 
+    const convertedAmount = makeConversion()
+;
     // je configure ma représentation en fonction de mon state
     return (
       <div className="converter">
         <Header amount={baseAmount} increment={increment} />
         <Toggler isOpen={isOpen} toggleOpen={toggleOpen} />
         <main>
-          {isOpen && <Currencies list={listOfCurrencies} />}
-          <Amount number={123} currency="devise"/>
+          {isOpen && <Currencies list={listOfCurrencies} setCurrency={setCurrency} />}
+          <Amount number={convertedAmount} currency={currencyTarget}/>
         </main>
       </div>
     );

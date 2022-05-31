@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import './style.scss';
 
-function SingleCurrency({ name }) {
+function SingleCurrency({ name, setCurrency}) {
   const handleClick = () => {
-    
+    setCurrency(name)
   }
   return (
     <li className="currency">
@@ -16,6 +16,7 @@ function SingleCurrency({ name }) {
 
 SingleCurrency.propTypes = {
   name: PropTypes.string.isRequired,
+  setCurrency: PropTypes.func.isRequired,
 };
 
 export default SingleCurrency;
