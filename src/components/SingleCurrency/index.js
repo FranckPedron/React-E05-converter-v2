@@ -2,9 +2,12 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 function SingleCurrency({ name }) {
+  const handleClick = () => {
+    
+  }
   return (
     <li className="currency">
-      <button className="currency-btn" type="button">
+      <button onClick={handleClick} className="currency-btn" type="button">
         {name}
       </button>
     </li>
