@@ -65,7 +65,7 @@ class Converter extends React.Component {
         <Toggler isOpen={isOpen} toggleOpen={toggleOpen} />
         <main>
           {isOpen && <Currencies list={listOfCurrencies} />}
-          <Amount />
+          <Amount number={123} currency="devise"/>
         </main>
       </div>
     );
